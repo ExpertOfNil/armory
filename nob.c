@@ -13,9 +13,9 @@ int main(int argc, char** argv) {
 
     nob_cmd_append(&cmd, "clang", COMMON_CFLAGS);
     nob_cmd_append(&cmd, "-Iinclude");
-    nob_cmd_append(&cmd, SRC_DIR "tests.c");
-    nob_cmd_append(&cmd, "-o", BUILD_DIR "tests");
-    nob_cmd_append(&cmd, "-lm");
+    nob_cmd_append(&cmd, SRC_DIR "graphics.c");
+    nob_cmd_append(&cmd, "-o", BUILD_DIR "graphics");
+    nob_cmd_append(&cmd, "-lm", "-Llib", "-lwgpu_native", "-lSDL3");
     if (!nob_cmd_run_sync(cmd)) return 1;
     return 0;
 }
